@@ -36,6 +36,7 @@ Metrics that competitors used: MSRP, color, safety rating, MPG, engine size, and
 Null hypothesis or alternative hypothesis
   - The null hypothesis: MechaCar list price correlates to the car size category. 
   - The alternative hypothesis: MechaCar list price does not correlates to the car size category.
+  
 A scatter box plot with competition list prices on the same car size category will reflect the range.   
   
 
