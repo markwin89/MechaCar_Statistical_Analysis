@@ -1,0 +1,36 @@
+setwd("~/Bootcamp/R and Stat/Challenge")
+### #1 Deliverable: Linear Regression to Predict MPG ###
+library(dplyr)
+## import and read csv
+MechaCar_mpg = read.csv(file="MechaCar_mpg.csv",check.names=F,stringsAsFactors = F)
+### 1 Deliverable: Linear Regression to Predict MPG
+# Download the library with package.
+library(dplyr)
+library(tidyverse)
+# Import and read csv as DF.
+MechaCar_mpg = read.csv(file="MechaCar_mpg.csv",check.names=F,stringsAsFactors = F)
+# Perform linear regression using the lm() function. Pass in all six variables and add DF.
+lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD ,data=MechaCar_mpg)
+# Using the summary() function for p-value and r-squared value of the linear regression model.
+summary(lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD ,data=MechaCar_mpg))
+### 2 Deliverable: Visualizations for the Trip Analysis
+# Import and read csv as DF.
+suspension_coil = read.csv(file="Suspension_Coil.csv",check.names=F,stringsAsFactors = F)
+# creates a total_summary dataframe using the summarize() function to get the mean, median, variance, and standard deviation of the suspension coil’s PSI column.
+total_summary = suspension_coil %>% summarize(Mean = mean(PSI), Median = median(PSI), Variance = var(PSI), SD = sd(PSI), .groups = 'keep')
+# create a lot_summary dataframe using the group_by() and the summarize() functions to group each manufacturing lot by the mean, median, variance, and standard deviation of the suspension coil's PSI column.
+lot_summary = suspension_coil %>% group_by(Manufacturing_Lot) %>% summarize(Mean = mean(PSI),Median = median(PSI), Variance = var(PSI), SD = sd(PSI) , .groups = 'keep')
+lot_summary
+total_summary
+### 3 Deliverable: T-Tests on Suspension Coils
+# Using the t.test() function to determine if the PSI across all manufacturing lots is statistically different from the population mean of 1,500 pounds per square inch
+t.test(suspension_coil$PSI,mu=1500)
+# Next, write three more RScripts in your MechaCarChallenge.RScript using the t.test() function and its subset() argument to determine if the PSI for each manufacturing lot is statistically different from the population mean of 1,500 pounds per square inch.
+lot_1 = subset(suspension_coil, Manufacturing_Lot=="Lot1")
+lot_2 = subset(suspension_coil, Manufacturing_Lot=="Lot2")
+lot_3 = subset(suspension_coil, Manufacturing_Lot=="Lot3")
+t.test(lot_1$PSI,mu=1500)
+t.test(lot_2$PSI,mu=1500)
+t.test(lot_3$PSI,mu=1500)
+
+
