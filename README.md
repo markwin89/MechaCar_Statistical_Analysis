@@ -22,10 +22,21 @@
     - The outlier is Lot3 causing a large jump of the overall variance.  The variance is 170 while the other 2 lots are under 10 digits.  
     
 ### T-Tests on Suspension Coils
-  - 
-
 ![t test PSI mu 1500 Deliverable 3](https://user-images.githubusercontent.com/101272613/177075854-2a74ad12-d08b-4c88-b567-21f87450796d.PNG)
 
 ![t test 3 manu lot mu 1500 Deliverable 3](https://user-images.githubusercontent.com/101272613/177075859-b05061b8-78b1-4edf-9268-232f87cd5fba.PNG)
+  - Lot 1 has a mean of 1500 and P-Value 1.  This means we cannot reject the null hypothesis and no difference between sample mean and population mean of 1500.  
+  - Lot 2 is similar to Lot 1.  The mean is 1500.02 with the P-Value of 0.6072 which we cannot reject the null hypothesis.  
+  - Lot 3 has a mean at 1496.14 and P-Value of 0.04168.  In this case, we have to reject the null hypothesis. 
+    - Lot 3 needs to be under review of production since the data shows outliers in that lot. 
+    
+### Study Design: MechaCar vs Competition
+Metrics that competitors used: MSRP, color, safety rating, MPG, engine size, and car size category. 
+  - The next metrics tested: MPG, engine size, car size category, expense.
+Null hypothesis or alternative hypothesis
+  - The null hypothesis: MechaCar list price correlates to the car size category. 
+  - The alternative hypothesis: MechaCar list price does not correlates to the car size category.
+A scatter box plot with competition list prices on the same car size category will reflect the range.   
+  
 
-###
+    
